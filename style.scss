@@ -2,6 +2,7 @@
 $bg-color: #0e112b;
 $bg-color-light: rgb(17, 24, 65);
 $sidebar-hover-color: #3f8ffc;
+$sidebar-hover-color: #429246;
 $text-main-color: #f1f1f1;
 
 *, ::before, ::after{
@@ -12,6 +13,7 @@ $text-main-color: #f1f1f1;
 body{
     font-family: Poppins, sans-serif;
     background: $bg-color;
+    
 }
 
 main{
@@ -69,12 +71,17 @@ header{
 
         .hamb1{
             top: 5px;
+            transform: rotate(0);
+            animation: hamb1-anim .5s ease-in-out backwards;
         }
         .hamb2{
             top: 12px;
+            animation: hamb2-anim .5s ease-in-out forwards;
         }
         .hamb3{
             top: 20px;
+            animation: hamb3-anim .5s ease-in-out forwards;
+
         }
     }
     #close{
@@ -84,10 +91,13 @@ header{
         .hamb1{
             top: 50%;
             transform: rotate(45deg);
+            animation: hamb1-close-anim .5s ease-in-out forwards;
         }
         .hamb2{
             top: 50%;
             transform: rotate(315deg);
+            animation: hamb2-close-anim .5s ease-in-out forwards;
+
         }
     }
 }
@@ -139,6 +149,53 @@ header{
     border: 1px dashed $text-main-color;
     color: $text-main-color;
 }
+
+
+@keyframes hamb1-anim{
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes hamb2-anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hamb3-anim{
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes hamb1-close-anim{
+    from{
+        top: 0%;
+        right: -50%;
+    }
+    to{
+        top: 50%;
+        right: 0;
+    }
+}
+@keyframes hamb2-close-anim{
+    from{
+        top: 0%;
+        left: -50%;
+    }
+    to{
+        top: 50%;
+        left: 0;
+    }
+}
+
 
 @media only screen and (min-width: 600px) {
     header{

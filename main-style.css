@@ -168,7 +168,7 @@ header #close .hamb2 {
 }
 
 .sidebar ul li a:hover {
-  color: #3f8ffc;
+  color: #429246;
 }
 
 .sidebar.active {
@@ -327,4 +327,132 @@ header #close .hamb2 {
     padding: 40px 100px;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+.content {
+  color: #f1f1f1;
+}
+
+.search-poke-form {
+  max-width: 700px;
+  width: 70%;
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search-poke-form .inp-group {
+  width: 100%;
+}
+
+.search-poke-form label {
+  position: absolute;
+  top: 50%;
+  color: darkblue;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 15px;
+}
+
+.search-poke-form input {
+  background: #f1f1f1;
+  border: none;
+  outline: none;
+  width: 60%;
+  width: 100%;
+  padding: 15px;
+}
+
+.search-poke-form button {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.search-poke-form button .icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.search-poke-form button .icon::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid darkblue;
+  border-radius: 50%;
+  -webkit-transform: translate(-4px, -4px);
+          transform: translate(-4px, -4px);
+}
+
+.search-poke-form button .icon::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background-color: darkblue;
+  -webkit-transform: translate(6px, 6px) rotate(315deg);
+          transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search-poke-form .clear {
+  display: block;
+  position: absolute;
+  top: calc(50% + 5px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  right: 60px;
+  cursor: pointer;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.search-poke-form .clear::before {
+  position: absolute;
+  content: '';
+  right: 50%;
+  width: 1px;
+  height: 20px;
+  background: darkblue;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+.search-poke-form .clear::after {
+  position: absolute;
+  content: '';
+  right: 50%;
+  width: 1px;
+  height: 20px;
+  background: darkblue;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+/*# sourceMappingURL=main-style.css.map */
