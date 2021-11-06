@@ -334,17 +334,16 @@ header #close .hamb2 {
 
 .search-poke-form {
   max-width: 700px;
-  width: 70%;
+  width: 100%;
   min-width: 300px;
   margin: 0 auto;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
   background: #f1f1f1;
   border-radius: 5px;
-  overflow: hidden;
+  /*Animation d'input*/
 }
 
 .search-poke-form .inp-group {
@@ -357,7 +356,9 @@ header #close .hamb2 {
   color: darkblue;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-left: 15px;
+  left: 20px;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .search-poke-form input {
@@ -366,7 +367,11 @@ header #close .hamb2 {
   outline: none;
   width: 60%;
   width: 100%;
-  padding: 15px;
+  padding: 5px;
+  margin-left: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: Poppins, sans-serif;
 }
 
 .search-poke-form button {
@@ -454,5 +459,11 @@ header #close .hamb2 {
   background: darkblue;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.search-poke-form:focus-within label,
+.search-poke-form.active-input label {
+  top: -15px;
+  color: #f1f1f1;
 }
 /*# sourceMappingURL=main-style.css.map */

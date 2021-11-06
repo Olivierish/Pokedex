@@ -5,17 +5,16 @@ $darkblue : darkblue;
 }
 .search-poke-form{
     max-width: 700px; //max width else width:70%
-    width: 70%;
+    width: 100%;
     min-width: 300px;
     margin: 0 auto;
     //border-style:dotted;
     position: relative;
     display: flex;
     //@at-root
-    height: 40px;
     background: $text-main-color;
     border-radius: 5px;
-    overflow: hidden;
+    //overflow: hidden;
 
     .inp-group{
         width: 100%;
@@ -25,7 +24,8 @@ $darkblue : darkblue;
         top: 50%;
         color: $darkblue;
         transform: translateY(-50%);
-        margin-left: 15px;
+        left: 20px;
+        transition: all 0.3s ease-in;
         
     }
     input{
@@ -34,7 +34,11 @@ $darkblue : darkblue;
         outline: none;
         width: 60%;
         width: 100%;
-        padding: 15px;
+        padding: 5px;
+        margin-left: 15px;
+        border-radius: 5px;
+        font-size: 1em;
+        font-family: Poppins, sans-serif;
     
     }
     button{
@@ -110,6 +114,12 @@ $darkblue : darkblue;
             background: $darkblue;
             transform: rotate(45deg);
         }
+    }
+    /*Animation d'input*/
+    &:focus-within label,
+    &.active-input label{
+        top : -15px;
+        color: $text-main-color;
     }
 }
 
