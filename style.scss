@@ -2,7 +2,6 @@
 $bg-color: #0e112b;
 $bg-color-light: rgb(17, 24, 65);
 $sidebar-hover-color: #3f8ffc;
-$sidebar-hover-color: #429246;
 $text-main-color: #f1f1f1;
 
 *, ::before, ::after{
@@ -13,7 +12,6 @@ $text-main-color: #f1f1f1;
 body{
     font-family: Poppins, sans-serif;
     background: $bg-color;
-    
 }
 
 main{
@@ -146,7 +144,7 @@ header{
     position: relative;
     width: 100%;
     padding: 40px 20px;
-    border: 1px dashed $text-main-color;
+    //border: 1px dashed $text-main-color;
     color: $text-main-color;
 }
 

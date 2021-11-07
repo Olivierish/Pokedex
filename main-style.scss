@@ -1,8 +1,12 @@
 @import "./style.scss";
 $darkblue : darkblue;
+$bg-color: #0e112b;
+
 .content{
+    //color: $darkblue;
     color: $text-main-color;
 }
+
 .search-poke-form{
     max-width: 700px; //max width else width:70%
     width: 100%;
@@ -123,3 +127,40 @@ $darkblue : darkblue;
     }
 }
 
+.container{
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    margin: 40px auto;
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        li{
+            width: 200px;
+            height: auto;
+            padding: 10px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h5{
+                font-size: 1.3em;
+                font-weight: 600;
+                //color: $bg-color;
+                color: #5a3804;
+            }
+            p{
+                font-size: 1em;
+                font-weight: 500;
+                color: $bg-color-light;
+            }
+        }
+    }
+}
