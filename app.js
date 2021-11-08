@@ -1,3 +1,5 @@
+//This function open and close the sidebar, 
+//when the user click on the burger menu.
 function toggleClassName(){
     const sidebarElt = document.querySelector(".sidebar");
     const openElt = document.getElementById('open');
@@ -19,6 +21,7 @@ let allPokemon = [];
 let allPokemonSorted = [];
 const inputElt = document.getElementById('search-poke');
 const pokeListElt = document.querySelector('.list-poke');
+const loaderElt = document.querySelector('.loader');
 
 const types = {
     grass: '#78c850',
@@ -79,6 +82,7 @@ function fetchPokemon(pokemon) {
             }).slice(0,21);
 
             createCard(allPokemonSorted);
+            loaderElt.style.display = "none";
         }
         });
 
@@ -113,6 +117,62 @@ function displayId(id) {
     str = id.toString();
     return `No.${str.padStart(3,'0')}`;      
 }
+
+// Infinite Scroll
+
+window:addEventListener('scroll',() => {
+    const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+    // scrollTop : the scroll size from the top
+    // scrollHeight : scroll total(size of the html document)
+    // clientHeight : the height of the user's screen 
+    
+    if (clientHeight + scrollTop >= scrollHeight - 20) {
+        addPoke(6);
+    }
+});
+
+let index = 21;
+
+function addPoke(nbr) {
+    if(index > 151){
+        return;
+    }
+    const arrToAdd = allPokemon.slice(index, index + nbr);
+    createCard(arrToAdd);
+    index += nbr;
+}
+
+//Search using the button
+// const formElt = document.querySelector('form');
+//     formElt.addEventListener('submit', (e) => {
+//         e.preventDefault();
+//         searchPoke();
+//     });
+
+//Search on the fly, whenever the user write a letter or delete one.
+inputElt.addEventListener('keyup',searchPoke);
+
+function searchPoke() {
+    if(index < 151){
+        addPoke(130);
+    }
+    let filter, allLiElts, titleValue, allTitleElts;
+    filter = inputElt.value.toUpperCase(); 
+    allLiElts = document.querySelectorAll('li');
+    allTitleElts = document.querySelectorAll('li > h5');
+
+    for (let i = 0; i < allLiElts.length; i++) {
+        titleValue = allLiElts[i].innerText;
+
+        if(titleValue.toUpperCase().indexOf(filter) > -1){
+            allLiElts[i].style.display = "flex";
+        } else {
+            allLiElts[i].style.display = "none";
+        }
+    }
+}
+
+
 //Animation input
 inputElt.addEventListener('input',(e)=>{
     if (e.target.value !== "") {

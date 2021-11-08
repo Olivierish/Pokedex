@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="./favicon/site.webmanifest"> -->
     <link rel="stylesheet" href="main-style.css">
     <title>Pokedex</title>
 </head>
@@ -26,7 +29,7 @@
     </header>
     <div class="sidebar">  
         <ul>
-            <li><a href="#">Github</a></li>
+            <li><a href="https://github.com/Olivierish/Pokedex.git">Github</a></li>
             <li><a href="#">What I learned</a></li>
         </ul>
     </div>
@@ -34,7 +37,14 @@
         <form action="#" class="search-poke-form">
             <label for="search-poke">Search for a Pokemon</label>
             <input type="text" id="search-poke">
-            <button type="submit"><div class="icon"></div></button>
+            <!-- <button type="submit"><div class="icon"></div></button> -->
+        
+        <!-- Loader -->
+        <div class="loader">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
         </form>
         <div class="container">
             <ul class="list-poke">

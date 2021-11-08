@@ -332,8 +332,8 @@ header #close .hamb2 {
 }
 
 .search-poke-form {
-  max-width: 700px;
-  width: 100%;
+  max-width: 500px;
+  width: 70%;
   min-width: 300px;
   margin: 0 auto;
   position: relative;
@@ -342,6 +342,50 @@ header #close .hamb2 {
   display: flex;
   background: #f1f1f1;
   border-radius: 5px;
+  /*
+    button{
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        //background: rgba(green,0.5);
+        border: none;
+        outline: none;
+        border-radius: 50%;
+    
+        .icon{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background:$text-main-color;
+            border-radius:40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //z-index: 1000;
+            cursor: pointer;
+    
+            &::before{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 3px solid $darkblue;
+                border-radius: 50%;
+                transform: translate(-4px, -4px);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 12px;
+                background-color: $darkblue;
+                transform: translate(6px, 6px) rotate(315deg);
+            }
+        }
+    }*/
   /*Animation d'input*/
 }
 
@@ -373,24 +417,20 @@ header #close .hamb2 {
   font-family: Poppins, sans-serif;
 }
 
-.search-poke-form button {
-  display: block;
-  position: relative;
-  height: 40px;
-  width: 40px;
-  border: none;
-  outline: none;
-  border-radius: 50%;
+.search-poke-form:focus-within label,
+.search-poke-form.active-input label {
+  top: -15px;
+  color: #f1f1f1;
 }
 
-.search-poke-form button .icon {
+.search-poke-form .loader {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background: #f1f1f1;
-  border-radius: 40px;
+  top: 250px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,70 +440,45 @@ header #close .hamb2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
 }
 
-.search-poke-form button .icon::before {
-  content: "";
-  position: absolute;
+.search-poke-form .loader .point {
+  margin: 0px 5px;
   width: 20px;
   height: 20px;
-  border: 3px solid darkblue;
   border-radius: 50%;
-  -webkit-transform: translate(-4px, -4px);
-          transform: translate(-4px, -4px);
+  background: #f1f1f1;
+  -webkit-animation: point-anim 0.3s alternate infinite;
+          animation: point-anim 0.3s alternate infinite;
 }
 
-.search-poke-form button .icon::after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 12px;
-  background-color: darkblue;
-  -webkit-transform: translate(6px, 6px) rotate(315deg);
-          transform: translate(6px, 6px) rotate(315deg);
+.search-poke-form .loader .point:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
 }
 
-.search-poke-form .clear {
-  display: block;
-  position: absolute;
-  top: calc(50% + 5px);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  right: 60px;
-  cursor: pointer;
-  visibility: hidden;
-  z-index: 1000;
+.search-poke-form .loader .point:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
-.search-poke-form .clear::before {
-  position: absolute;
-  content: '';
-  right: 50%;
-  width: 1px;
-  height: 20px;
-  background: darkblue;
-  -webkit-transform: rotate(315deg);
-          transform: rotate(315deg);
+.search-poke-form .loader .point:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
-.search-poke-form .clear::after {
-  position: absolute;
-  content: '';
-  right: 50%;
-  width: 1px;
-  height: 20px;
-  background: darkblue;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+@-webkit-keyframes point-anim {
+  100% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
 }
 
-.search-poke-form:focus-within label,
-.search-poke-form.active-input label {
-  top: -15px;
-  color: #f1f1f1;
+@keyframes point-anim {
+  100% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
 }
 
 .container {
@@ -511,7 +526,7 @@ header #close .hamb2 {
 .container ul li h5 {
   font-size: 1.3em;
   font-weight: 600;
-  color: #5a3804;
+  color: #062017;
 }
 
 .container ul li p {

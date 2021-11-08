@@ -3,22 +3,18 @@ $darkblue : darkblue;
 $bg-color: #0e112b;
 
 .content{
-    //color: $darkblue;
     color: $text-main-color;
 }
 
 .search-poke-form{
-    max-width: 700px; //max width else width:70%
-    width: 100%;
+    max-width: 500px; //max width else width = 70%
+    width: 70%;
     min-width: 300px;
     margin: 0 auto;
-    //border-style:dotted;
     position: relative;
     display: flex;
-    //@at-root
     background: $text-main-color;
     border-radius: 5px;
-    //overflow: hidden;
 
     .inp-group{
         width: 100%;
@@ -45,6 +41,7 @@ $bg-color: #0e112b;
         font-family: Poppins, sans-serif;
     
     }
+    /*
     button{
         display: block;
         position: relative;
@@ -54,7 +51,7 @@ $bg-color: #0e112b;
         border: none;
         outline: none;
         border-radius: 50%;
-
+    
         .icon{
             position: absolute;
             top: 0;
@@ -87,43 +84,49 @@ $bg-color: #0e112b;
                 transform: translate(6px, 6px) rotate(315deg);
             }
         }
-    }
-    .clear{
-        display: block;
-        position: absolute;
-        top: calc(50% + 5px);
-        transform: translateY(-50%);
-        width: 20px;
-        height: 20px;
-        right: 60px;
-        cursor: pointer;
-        visibility: hidden;
-        z-index: 1000;
-
-        &::before{
-            position: absolute;
-            content: '';
-            right: 50%;
-            width: 1px;
-            height: 20px;
-            background: $darkblue;
-            transform: rotate(315deg);
-        }
-        &::after{
-            position: absolute;
-            content: '';
-            right: 50%;
-            width: 1px;
-            height: 20px;
-            background: $darkblue;
-            transform: rotate(45deg);
-        }
-    }
+    }*/
+    
     /*Animation d'input*/
     &:focus-within label,
     &.active-input label{
         top : -15px;
         color: $text-main-color;
+    }
+
+    //Animate the loader
+    .loader{
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .point{
+            margin: 0px 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: $text-main-color;
+            animation: point-anim 0.3s alternate infinite;
+            &:nth-child(1){
+                animation-delay: 0.1s;
+            }
+            &:nth-child(2){
+                animation-delay: 0.3s;
+            }
+            &:nth-child(3){
+                animation-delay: 0.2s;
+            }
+        }
+        @keyframes point-anim {
+            100%{
+                transform: translateY(-30px);
+            }
+        }
     }
 }
 
@@ -153,8 +156,7 @@ $bg-color: #0e112b;
             h5{
                 font-size: 1.3em;
                 font-weight: 600;
-                //color: $bg-color;
-                color: #5a3804;
+                color: #062017;
             }
             p{
                 font-size: 1em;
